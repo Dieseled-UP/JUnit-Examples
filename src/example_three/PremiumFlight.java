@@ -4,18 +4,21 @@ public class PremiumFlight extends Flight {
 
 	public PremiumFlight(int id) {
 		super(id);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public boolean addPassenger(Passenger passenger) {
-		// TODO Auto-generated method stub
+		if (passenger.isVip()) {
+			return passengersList.add(passenger);
+		}
 		return false;
 	}
 
 	@Override
 	public boolean removePassenger(Passenger passenger) {
-		// TODO Auto-generated method stub
+		if (passenger.isVip()) {
+			return passengersList.remove(passenger);
+		}
 		return false;
 	}
 
