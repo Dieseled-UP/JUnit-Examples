@@ -3,6 +3,7 @@ package example_three;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -105,6 +106,21 @@ class AirportTest {
                         () -> assertEquals(1, businessFlight.getPassengersList().size())
                 );
             }
+        }
+    }
+    
+    @DisplayName("Given there is a premium flight")
+    @Nested
+    class PremiumFlightTest {
+        private Flight premiumFlight;
+        private Passenger mike;
+        private Passenger john;
+
+        @BeforeEach
+        void setUp() {
+            premiumFlight = new PremiumFlight(3);
+            mike = new Passenger("Mike", false);
+            john = new Passenger("John", true);
         }
     }
 
