@@ -1,12 +1,11 @@
 package example_three;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public abstract class Flight {
 
 	private int id;
-	List<Passenger> passengersList = new ArrayList<Passenger>();
+	Set<Passenger> passengersList = new HashSet<>();
 
 	public Flight(int id) {
 		this.id = id;
@@ -16,7 +15,7 @@ public abstract class Flight {
 		return id;
 	}
 
-	public List<Passenger> getPassengersList() {
+	public Set<Passenger> getPassengersSet() {
 		return passengersList;
 	}
 
